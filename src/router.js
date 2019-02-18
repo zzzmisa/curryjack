@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import CjkFirstView from '@/components/templates/CjkFirstView.vue'
+import queryString from 'query-string'
 
 Vue.use(Router)
 
@@ -20,5 +21,18 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ '@/components/templates/CjkResultView.vue'),
       props: (route) => ({ query: route.query.q })
     }
-  ]
+  ],parseQuery: (query) => {
+    return queryString.parse(query, {
+      arrayFormat: 'bracket'
+    })
+  },
+  stringifyQuery: (params) => {
+    if (0 == Object.keys(params).length) {
+      return ''
+    } else {
+      return '?' + queryString.stringify(params, {
+        arrayFormat: 'bracket'
+      })
+    }
+  }
 })

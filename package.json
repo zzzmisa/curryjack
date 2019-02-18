@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bulma": "^0.7.4",
+    "query-string": "^6.2.0",
     "vue": "^2.5.22",
     "vue-router": "^3.0.1"
   },
