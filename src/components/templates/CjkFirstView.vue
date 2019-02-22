@@ -1,15 +1,23 @@
 <template>
-  <CjkHero />
+  <div>
+    <CjkHero/>
+    <div class=container><CjkApp/></div>
+    <CjkFooter/>
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import CjkHero from "@/components/organsms/CjkHero.vue";
+import CjkApp from "@/components/organsms/CjkApp.vue";
+import CjkFooter from "@/components/organsms/CjkFooter.vue";
 
 export default {
   name: "CjkFirstView",
   components: {
-    CjkHero
+    CjkHero,
+    CjkApp,
+    CjkFooter
   }
 };
 </script>
