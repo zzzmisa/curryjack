@@ -3,16 +3,34 @@
     <h1 class="title">
       <img alt="Vue logo" src="@/assets/logo.png">
     </h1>
-    <h2 class="subtitle">2,100円に近づけろ！超えたらアウト！
-      <b-icon pack="fa" icon="question-circle" type="is-primary"></b-icon>
+    <h2 class="subtitle" >2,100円に近づけろ！超えたらアウト！
+      <b-icon
+        pack="fa"
+        icon="question-circle"
+        type="is-primary"
+        @click.native="isComponentModalActive = true"
+      ></b-icon>
     </h2>
+    <b-modal :active.sync="isComponentModalActive" has-modal-card>
+      <CjkGuideModal />
+    </b-modal>
   </section>
 </template>
 
 <script>
+import CjkGuideModal from "@/components/organsms/CjkGuideModal.vue";
+
 export default {
-  name: 'CjkHero',
-}
+  name: "CjkHero",
+  components: {
+    CjkGuideModal
+  },
+  data() {
+    return {
+      isComponentModalActive: true
+    };
+  }
+};
 </script>
 
 <style scoped>
