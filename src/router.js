@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import CjkFirstView from '@/components/templates/CjkFirstView.vue'
+import CjkHandView from '@/components/templates/CjkHandView.vue'
 import queryString from 'query-string'
 
 Vue.use(Router)
@@ -9,8 +9,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'CjkFirstView',
-      component: CjkFirstView
+      name: 'CjkHandView',
+      component: CjkHandView
     },
     {
       path: '/result',
@@ -19,9 +19,10 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ '@/components/templates/CjkResultView.vue'),
-      props: (route) => ({ query: route.query.q })
+      props: (route) => ({ curries: route.query.c })
     }
-  ],parseQuery: (query) => {
+  ],
+  parseQuery: (query) => {
     return queryString.parse(query, {
       arrayFormat: 'bracket'
     })

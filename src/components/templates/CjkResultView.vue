@@ -1,18 +1,31 @@
 <template>
-  <p v-on:click="reverseMessage">結果</p>
+  <div>
+    <CjkHero/>
+    <div class=container><CjkAppResult　v-bind:curries="curries"/></div>
+    <CjkFooter/>
+  </div>
 </template>
 
 <script>
+// @ is an alias to /src
+import CjkHero from "@/components/organsms/CjkHero.vue";
+import CjkAppResult from "@/components/organsms/CjkAppResult.vue";
+import CjkFooter from "@/components/organsms/CjkFooter.vue";
 
 export default {
-  name: 'HelloWorld',
+  name: 'CjkResultView',
+  components: {
+    CjkHero,
+    CjkAppResult,
+    CjkFooter
+  },
   props: {
-     query: Array
+     curries: Array
   },
   methods: {
     reverseMessage: function (key) {
-      console.log(this.$route.query)
-      console.log(this.query)
+      console.log(this.$route.curries)
+      console.log(this.curries)
     }
   }
 }

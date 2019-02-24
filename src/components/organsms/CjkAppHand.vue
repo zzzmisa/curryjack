@@ -7,7 +7,7 @@
       <div class="column is-one-quarter">
         <div class="buttons">
           <button class="button is-medium is-primary" @click="addCurry">もう一枚引く</button>
-          <button class="button is-medium is-primary">結果を見る</button>
+          <router-link :to="{ path: 'result', query: { c: curries }}"><button class="button is-medium is-primary">結果を見る</button></router-link>
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
 import CjkCurry from "@/components/molecules/CjkCurry.vue";
 
 export default {
-  name: "CjkApp",
+  name: "CjkAppHand",
   components: {
     CjkCurry
   },
