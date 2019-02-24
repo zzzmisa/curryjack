@@ -3,7 +3,7 @@
     <p class="title">1杯目のカレー</p>
     <div class="card-image">
       <figure>
-        <img src="@/assets/curries/1.jpg">
+        <img :src="require('@/assets/curries/'+ id +'.jpg')" >
       </figure>
     </div>
   </div>
@@ -11,6 +11,13 @@
 
 <script>
 export default {
-  name: "CjkCurry"
+  name: "CjkCurry",
+
+  props: {
+    id: {
+      type: String
+    }
+  }
+
 };
 </script>
