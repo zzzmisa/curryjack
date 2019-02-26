@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      isComponentModalActive: true
+      isComponentModalActive: false
     };
   }
 };
