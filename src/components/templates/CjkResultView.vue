@@ -1,7 +1,7 @@
 <template>
   <div>
     <CjkHero/>
-    <div class=container><CjkAppResult　v-bind:curries="curries"/></div>
+    <div class="container"><CjkAppResult v-bind:hand="hand"/></div>
     <CjkFooter/>
   </div>
 </template>
@@ -13,20 +13,14 @@ import CjkAppResult from "@/components/organsms/CjkAppResult.vue";
 import CjkFooter from "@/components/organsms/CjkFooter.vue";
 
 export default {
-  name: 'CjkResultView',
+  name: "CjkResultView",
   components: {
     CjkHero,
     CjkAppResult,
     CjkFooter
   },
   props: {
-     curries: Array
-  },
-  methods: {
-    reverseMessage: function (key) {
-      console.log(this.$route.curries)
-      console.log(this.curries)
-    }
+    hand: Array
   }
-}
+};
 </script>

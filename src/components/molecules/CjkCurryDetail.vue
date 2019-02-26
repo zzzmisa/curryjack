@@ -1,10 +1,10 @@
 <template>
   <div class="box">
-      <figure>
-        <img :src="require('@/assets/curries/'+ id +'.jpg')" >
-      </figure>
-      <p class="title">1,000円</p>
-      <p>ミサさんちのおいしいパキスタンカレー。</p>
+    <figure>
+      <img :src="require('@/assets/curries/'+ curry.id +'.jpg')">
+    </figure>
+    <p class="title">{{curry.price}}円</p>
+    <p>{{curry.description}}</p>
   </div>
 </template>
 
@@ -13,10 +13,9 @@ export default {
   name: "CjkCurryDetail",
 
   props: {
-    id: {
-      type: String
+    curry: {
+      type: Object
     }
   }
-
 };
 </script>
