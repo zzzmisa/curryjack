@@ -11,6 +11,20 @@
         <button class="button is-medium is-primary">もう一度遊ぶ</button>
       </router-link>
     </div>
+    <div class="buttons is-centered">
+      <a class="button is-primary" v-bind:href="'http://twitter.com/intent/tweet?url='+url">
+        <span class="icon">
+          <i class="fab fa-twitter"></i>
+        </span>
+        <span>Twitter</span>
+      </a>
+      <a class="button is-primary" v-bind:href="'http://www.facebook.com/sharer.php?u='+url">
+        <span class="icon">
+          <i class="fab fa-facebook"></i>
+        </span>
+        <span>Facebook</span>
+      </a>
+    </div>
   </section>
 </template>
 
@@ -35,14 +49,15 @@ export default {
     return {
       curries: [],
       total: 0,
-      cjscore: config.cjscore
+      cjscore: config.cjscore,
+      url: config.url
     };
   },
   created() {
     for (let id of this.hand) {
       this.curries.push(this.findCurry(id));
     }
-    this.total = this.curries.reduce((p, c) => p + c.price, 0)
+    this.total = this.curries.reduce((p, c) => p + c.price, 0);
   },
   methods: {
     findCurry: function(id) {

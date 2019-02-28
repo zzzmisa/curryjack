@@ -1,9 +1,11 @@
 <template>
   <section class="hero">
-    <h1 class="title">
-      <img alt="Vue logo" src="@/assets/logo.png">
-    </h1>
-    <h2 class="subtitle" >2,100円に近づけろ！超えたらアウト！
+    <router-link to="/">
+      <h1 class="title">
+        <img alt="Vue logo" src="@/assets/logo.png">
+      </h1>
+    </router-link>
+    <h2 class="subtitle">2,100円に近づけろ！超えたらアウト！
       <b-icon
         pack="fa"
         icon="question-circle"
@@ -12,7 +14,7 @@
       ></b-icon>
     </h2>
     <b-modal :active.sync="isGuideModalActive" has-modal-card>
-      <CjkGuideModal />
+      <CjkGuideModal/>
     </b-modal>
   </section>
 </template>
