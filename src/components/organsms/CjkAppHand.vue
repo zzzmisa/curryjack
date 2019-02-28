@@ -18,6 +18,7 @@
 
 <script>
 import CjkCurry from "@/components/molecules/CjkCurry.vue";
+import deck from "@/assets/curries.js";
 
 export default {
   name: "CjkAppHand",
@@ -26,18 +27,19 @@ export default {
   },
   data: function() {
     return {
-      allCurries: ["1", "2", "3", "4", "5"],
+      deck: [],
       hand: [] //手札
     };
   },
   created() {
+    Object.assign(this.deck, deck);
     this.addCurry();
   },
   methods: {
     addCurry: function() {
-      const rand = Math.floor(Math.random() * this.allCurries.length);
-      this.hand.push(this.allCurries[rand]);
-      this.allCurries.splice(rand, 1);
+      const rand = Math.floor(Math.random() * this.deck.length);
+      this.hand.push(this.deck[rand].id);
+      this.deck.splice(rand, 1);
     }
   }
 };

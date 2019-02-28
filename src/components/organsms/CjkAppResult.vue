@@ -17,7 +17,7 @@
 
 <script>
 import CjkCurryDetail from "@/components/molecules/CjkCurryDetail.vue";
-import allCurries from "@/assets/curries.js";
+import deck from "@/assets/curries.js";
 
 export default {
   name: "CjkAppResult",
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     findCurry: function(id) {
-      return allCurries.find(function(el) {
+      return deck.find(function(el) {
         return el.id === id;
       }, this);
     }
