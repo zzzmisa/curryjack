@@ -4,21 +4,19 @@
       <div class="column is-one-quarter" v-for="id in hand" :key="id">
         <CjkCurry v-bind:id="id"/>
       </div>
-      <div class="column is-one-quarter">
-        <div class="buttons">
-          <button class="button is-medium is-primary" @click="addCurry">もう一枚引く</button>
-          <router-link :to="{ path: 'result', query: { h: hand }}">
-            <button class="button is-medium is-primary">結果を見る</button>
-          </router-link>
-        </div>
-      </div>
+    </div>
+    <div class="buttons is-centered">
+      <button class="button is-medium is-primary" @click="addCurry">もう一枚引く</button>
+      <router-link :to="{ path: 'result', query: { h: hand }}">
+        <button class="button is-medium is-primary">結果を見る</button>
+      </router-link>
     </div>
   </section>
 </template>
 
 <script>
 import CjkCurry from "@/components/molecules/CjkCurry.vue";
-import deck from "@/assets/curries.js";
+import deck from "@/constants/curries.js";
 
 export default {
   name: "CjkAppHand",
