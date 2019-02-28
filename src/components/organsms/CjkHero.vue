@@ -8,10 +8,10 @@
         pack="fa"
         icon="question-circle"
         type="is-primary"
-        @click.native="isComponentModalActive = true"
+        @click.native="isGuideModalActive = true"
       ></b-icon>
     </h2>
-    <b-modal :active.sync="isComponentModalActive" has-modal-card>
+    <b-modal :active.sync="isGuideModalActive" has-modal-card>
       <CjkGuideModal />
     </b-modal>
   </section>
@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      isComponentModalActive: false
+      isGuideModalActive: false
     };
   }
 };

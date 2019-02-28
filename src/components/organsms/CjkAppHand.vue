@@ -12,25 +12,31 @@
         <button class="button is-medium is-primary">結果を見る</button>
       </router-link>
     </div>
+    <b-modal :active.sync="isDrawModalActive" has-modal-card>
+      <CjkDrawModal v-bind:id="hand[hand.length - 1]" v-bind:title="hand.length + '杯目のカレー'"/>
+    </b-modal>
   </section>
 </template>
 
 <script>
 import CjkCurry from "@/components/molecules/CjkCurry.vue";
+import CjkDrawModal from "@/components/organsms/CjkDrawModal.vue";
 import config from "@/constants/config.js";
 import deck from "@/constants/curries.js";
 
 export default {
   name: "CjkAppHand",
   components: {
-    CjkCurry
+    CjkCurry,
+    CjkDrawModal
   },
   data: function() {
     return {
       deck: [], //デッキ
       hand: [], //手札
       maxHand: config.maxHand,
-      stopDrawFlg: false
+      stopDrawFlg: false,
+      isDrawModalActive: false
     };
   },
   created() {
@@ -47,6 +53,9 @@ export default {
       }
       if (this.hand.length >= config.maxHand) {
         this.stopDrawFlg = true;
+      }
+      if(this.hand.length != 1){
+        this.isDrawModalActive = true;
       }
     }
   }
