@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <CjkResult v-bind:total="total"/>
-    <div class="columns is-centered is-multiline">
+    <div class="columns is-centered is-multiline" v-if="total <= cjscore">
       <div class="column is-one-quarter" v-for="(curry, index) in curries" :key="index">
         <CjkCurryDetail v-bind:curry="curry"/>
       </div>
@@ -18,6 +18,7 @@
 import CjkCurryDetail from "@/components/molecules/CjkCurryDetail.vue";
 import CjkResult from "@/components/molecules/CjkResult.vue";
 import deck from "@/constants/curries.js";
+import config from "@/constants/config.js";
 
 export default {
   name: "CjkAppResult",
@@ -33,7 +34,8 @@ export default {
   data: function() {
     return {
       curries: [],
-      total: 0
+      total: 0,
+      cjscore: config.cjscore
     };
   },
   created() {

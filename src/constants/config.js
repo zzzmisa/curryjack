@@ -1,3 +1,4 @@
 export default {
-  cjscore: 2100
+  cjscore: 2100,
+  maxHand: 3
 }

@@ -3,7 +3,7 @@
     <figure>
       <img :src="require('@/assets/curries/'+ curry.id +'.jpg')">
     </figure>
-    <p class="title">{{curry.price}}円</p>
+    <p class="title">{{curry.price.toLocaleString()}}円</p>
     <p>{{curry.description}}</p>
   </div>
 </template>

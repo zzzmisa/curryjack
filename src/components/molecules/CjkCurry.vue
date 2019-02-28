@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <p class="title">1杯目のカレー</p>
+    <p class="title">{{ title }}</p>
     <figure>
       <img :src="require('@/assets/curries/'+ id +'.jpg')">
     </figure>
@@ -13,6 +13,9 @@ export default {
 
   props: {
     id: {
+      type: String
+    },
+    title: {
       type: String
     }
   }
