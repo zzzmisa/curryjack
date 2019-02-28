@@ -16,7 +16,9 @@
         <br>2,100円に最も近い人が勝ちです！
       </div>
     </section>
-    <footer class="modal-card-foot"></footer>
+    <footer class="modal-card-foot">
+      <button class="button is-primary" @click="$parent.close()">OK</button>
+    </footer>
   </div>
 </template>
 

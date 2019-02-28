@@ -8,7 +8,9 @@
         <img :src="require('@/assets/curries/'+ id +'.jpg')">
       </figure>
     </section>
-    <footer class="modal-card-foot"></footer>
+    <footer class="modal-card-foot">
+      <button class="button is-primary" @click="$parent.close()">OK</button>
+    </footer>
   </div>
 </template>
 
