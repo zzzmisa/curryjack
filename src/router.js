@@ -22,6 +22,9 @@ export default new Router({
       props: (route) => ({ hand: route.query.h })
     }
   ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  },
   parseQuery: (query) => {
     return queryString.parse(query, {
       arrayFormat: 'bracket'
