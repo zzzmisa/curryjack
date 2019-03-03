@@ -10,14 +10,16 @@
 @import "~bulma/sass/utilities/_all";
 
 // Set your colors
+$cjklight: #F7F6E0;
+$cjklight-invert: findColorInvert($cjklight);
 $cjknormal: #14A338;
 $cjknormal-invert: findColorInvert($cjknormal);
 $cjkstrong: #993333;
 $cjkstrong-invert: findColorInvert($cjkstrong);
 
-
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (
+    "cjklight": ($cjklight, $cjklight-invert),
     "cjknormal": ($cjknormal, $cjknormal-invert),
     "cjkstrong": ($cjkstrong, $cjkstrong-invert)
 );

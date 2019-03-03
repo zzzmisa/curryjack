@@ -1,6 +1,6 @@
 <template>
   <div class="modal-card">
-    <header class="modal-card-head">
+    <header class="modal-card-head has-background-cjklight">
       <p class="modal-card-title">カレージャックの遊び方</p>
     </header>
     <section class="modal-card-body">
@@ -16,8 +16,8 @@
         <br>2,100円に最も近い人が勝ちです！
       </div>
     </section>
-    <footer class="modal-card-foot">
-      <button class="button is-primary" @click="$parent.close()">OK</button>
+    <footer class="modal-card-foot has-background-cjklight">
+      <button class="button is-cjknormal" @click="$parent.close()">OK</button>
     </footer>
   </div>
 </template>
@@ -27,3 +27,11 @@ export default {
   name: "CjkGuideModal"
 };
 </script>
+
+<style scoped>
+@import url(https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c);
+
+.modal-card-head{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+</style>
