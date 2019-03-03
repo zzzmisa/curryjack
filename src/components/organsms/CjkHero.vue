@@ -2,14 +2,14 @@
   <section class="hero">
     <router-link to="/">
       <h1 class="title">
-        <img alt="Vue logo" src="@/assets/logo.png">
+        <img alt="カレージャック" src="@/assets/logo.png">
       </h1>
     </router-link>
     <h2 class="subtitle">2,100円に近づけろ！超えたらアウト！
       <b-icon
         pack="fa"
         icon="question-circle"
-        type="is-primary"
+        type="is-cjknormal"
         @click.native="isGuideModalActive = true"
       ></b-icon>
     </h2>
@@ -37,4 +37,9 @@ export default {
 
 <style scoped>
 @import url(https://use.fontawesome.com/releases/v5.2.0/css/all.css);
+img {
+  width: 500px;
+  padding: 20px 10px 0px 10px;
+}
+
 </style>
