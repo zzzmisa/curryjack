@@ -2,7 +2,7 @@
   <section class="section">
     <div class="columns is-centered is-multiline">
       <div class="column is-one-third" v-for="(id, index) in hand" :key="id">
-        <CjkCurry v-bind:id="id" v-bind:title="(index + 1) + '杯目'"/>
+        <CjkCurry v-bind:id="id" v-bind:tag="(index + 1) + '杯目'"/>
       </div>
     </div>
     <b-message type="is-warning" v-if="stopDrawFlg">カレーのおかわりは{{maxHand}}杯までだよ</b-message>

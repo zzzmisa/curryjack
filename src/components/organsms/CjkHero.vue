@@ -37,6 +37,7 @@ export default {
 
 <style scoped>
 @import url(https://use.fontawesome.com/releases/v5.2.0/css/all.css);
+
 img {
   width: 500px;
   padding: 20px 10px 0px 10px;

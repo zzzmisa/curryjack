@@ -9,7 +9,7 @@
     <div v-else-if="total > cjscore">
       <p>アウト！！
         <br>
-        合計{{ total }}円
+        合計{{ total.toLocaleString() }}円
         <br>
         {{ cjscore.toLocaleString() }}円を{{ (total-cjscore).toLocaleString() }}円オーバー
       </p>

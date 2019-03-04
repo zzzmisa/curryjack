@@ -1,10 +1,10 @@
 <template>
-  <div class="box has-equal-height">
+  <div class="box">
     <figure
       class="image is-3by2"
       :style="{ backgroundImage: 'url(' + require('@/assets/curries/'+id+'.jpg') + ')' }"
     >
-      <span class="tag is-light is-rounded is-medium">{{ title }}</span>
+      <span class="tag is-light is-rounded is-medium">{{ tag }}</span>
     </figure>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
     id: {
       type: String
     },
-    title: {
+    tag: {
       type: String
     }
   }

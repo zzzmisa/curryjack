@@ -2,16 +2,18 @@
   <section class="section">
     <CjkResult v-bind:total="total"/>
     <div class="columns is-centered is-multiline" v-if="total <= cjscore">
-      <div class="column is-one-quarter" v-for="(curry, index) in curries" :key="index">
-        <CjkCurryDetail v-bind:curry="curry"/>
+      <div class="column is-one-third" v-for="(curry, index) in curries" :key="index">
+        <CjkCurryDetail v-bind:curry="curry" v-bind:tag="(index + 1) + '杯目'"/>
       </div>
     </div>
     <div class="buttons is-centered">
       <router-link to="/">
-        <button class="button is-medium is-primary">もう一度遊ぶ</button>
+        <button class="button is-medium is-cjknormal">もう一度遊ぶ</button>
       </router-link>
     </div>
+    <div>結果をシェアする</div>
     <div class="buttons is-centered">
+
       <a class="button is-primary" v-bind:href="'http://twitter.com/intent/tweet?url='+url">
         <span class="icon">
           <i class="fab fa-twitter"></i>
@@ -68,3 +70,4 @@ export default {
   }
 };
 </script>
+
