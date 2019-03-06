@@ -48,4 +48,14 @@ export default [
     "street": "角田町9-36",
     "source": "https://www.facebook.com/nobuaki.nagai.140/posts/2194093404137585"
   },
+  {
+    "id": "6",
+    "price": 2100,
+    "label": "牛ホルモンカレー(830円)＋大盛(100円)",
+    "restaurant": "串barくま食堂",
+    "pref": "大阪府",
+    "city": "大阪市",
+    "street": "角田町9-36",
+    "source": "https://www.facebook.com/nobuaki.nagai.140/posts/2194093404137585"
+  }
 ]

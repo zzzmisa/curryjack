@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section container">
     <div class="columns is-centered is-multiline">
       <div class="column is-one-third" v-for="(id, index) in hand" :key="id">
         <CjkCurry v-bind:id="id" v-bind:tag="(index + 1) + '杯目'"/>
@@ -64,4 +64,8 @@ export default {
 
 <style scoped>
 @import url(https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css);
+
+.section {
+  padding: 1rem 1.5rem
+}
 </style>

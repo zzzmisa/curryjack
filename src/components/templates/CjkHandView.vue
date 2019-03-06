@@ -1,7 +1,7 @@
 <template>
   <div>
     <CjkHero/>
-    <div class=container><CjkAppHand/></div>
+    <CjkAppHand/>
     <CjkFooter/>
   </div>
 </template>

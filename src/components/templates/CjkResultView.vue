@@ -1,7 +1,7 @@
 <template>
   <div>
     <CjkHero/>
-    <div class="container"><CjkAppResult v-bind:hand="hand"/></div>
+    <CjkAppResult v-bind:hand="hand"/>
     <CjkFooter/>
   </div>
 </template>

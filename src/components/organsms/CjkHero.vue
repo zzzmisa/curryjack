@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section class="section hero">
     <router-link to="/">
       <h1 class="title">
         <img alt="カレージャック" src="@/assets/logo.png">
@@ -40,7 +40,6 @@ export default {
 
 img {
   width: 500px;
-  padding: 20px 10px 0px 10px;
 }
 
 </style>
