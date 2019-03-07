@@ -16,18 +16,30 @@ $cjknormal: #14A338;
 $cjknormal-invert: findColorInvert($cjknormal);
 $cjkstrong: #993333;
 $cjkstrong-invert: findColorInvert($cjkstrong);
+$cjktwitter: #55acee;
+$cjktwitter-invert: findColorInvert($cjktwitter);
+$cjkfacebook: #315096;
+$cjkfacebook-invert: findColorInvert($cjkfacebook);
+$cjkline: #00c300;
+$cjkline-invert: findColorInvert($cjkline);
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (
     "cjklight": ($cjklight, $cjklight-invert),
     "cjknormal": ($cjknormal, $cjknormal-invert),
-    "cjkstrong": ($cjkstrong, $cjkstrong-invert)
+    "cjkstrong": ($cjkstrong, $cjkstrong-invert),
+    "cjktwitter": ($cjktwitter, $cjktwitter-invert),
+    "cjkfacebook": ($cjkfacebook, $cjkfacebook-invert),
+    "cjkline": ($cjkline, $cjkline-invert)
 );
 
 // Links
 $link: $cjknormal;
 $link-invert: $cjknormal-invert;
 $link-focus-border: $cjknormal;
+
+// Section
+$section-padding: 1rem 1.5rem;
 
 // Import Bulma and Buefy styles
 @import "~bulma";

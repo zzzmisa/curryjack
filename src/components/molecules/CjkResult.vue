@@ -2,13 +2,13 @@
   <div>
     <div v-if="total === cjscore">
       <img alt="パーフェクト" src="@/assets/perfect.png">
-      <p class="cjkout is-size-1 title">ピッタリ！！</p>
+      <p class="has-text-weight-bold is-size-1 title">ピッタリ！！</p>
       <p class="is-size-3">合計{{ cjscore.toLocaleString() }}円</p>
       <p class="is-size-3">素晴らしい！！</p>
     </div>
     <div v-else-if="total > cjscore">
       <img alt="アウト" src="@/assets/out.png">
-      <p class="cjkout is-size-1 title">アウト！！</p>
+      <p class="has-text-weight-bold is-size-1 title">アウト！！</p>
       <p class="is-size-3">合計{{ total.toLocaleString() }}円</p>
       <p
         class="is-size-5"
@@ -16,7 +16,7 @@
     </div>
     <div v-else>
       <img alt="more" src="@/assets/more.png">
-      <p class="cjkout is-size-1 title">もう少し！！</p>
+      <p class="has-text-weight-bold is-size-1 title">もう少し！！</p>
       <p class="is-size-3">合計{{total.toLocaleString()}}円</p>
       <p
         class="is-size-3"
@@ -43,14 +43,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.cjkout {
-  font-weight: bold;
-}
-
-img {
-  height: 400px;
-}
-</style>
-

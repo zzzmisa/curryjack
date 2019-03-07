@@ -1,6 +1,8 @@
 <template>
   <div>
-    <CjkResult v-bind:total="total"/>
+    <section class="section">
+      <CjkResult v-bind:total="total"/>
+    </section>
     <section class="section">
       <div class="columns is-centered is-multiline">
         <div class="column is-one-third" v-for="(curry, index) in curries" :key="index">
@@ -17,7 +19,9 @@
           <button class="button is-medium is-cjknormal">もう一度遊ぶ</button>
         </router-link>
       </div>
-      <CjkShare/>
+    </section>
+    <section class="section">
+      <CjkShare v-bind:total="total"/>
     </section>
   </div>
 </template>
@@ -65,4 +69,8 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+@import url(https://use.fontawesome.com/releases/v5.2.0/css/all.css);
+</style>
 

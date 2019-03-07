@@ -1,5 +1,5 @@
 export default {
-  url: "http://192.168.3.8:8080",
+  url: "https://curryjack.zzzmisa.com",
   cjscore: 2100,
   maxHand: 5
 }

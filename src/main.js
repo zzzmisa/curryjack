@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 
 import Buefy from 'buefy' //buefy
-import 'buefy/dist/buefy.css' //buefy
+//import 'buefy/dist/buefy.css' //buefy
 
 Vue.use(Buefy) //buefy
 
