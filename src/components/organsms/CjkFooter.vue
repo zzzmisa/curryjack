@@ -15,3 +15,9 @@ export default {
   name: "CjkFooter"
 };
 </script>
+
+<style scoped>
+.footer {
+  margin-top: 3rem;
+}
+</style>

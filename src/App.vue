@@ -39,7 +39,7 @@ $link-invert: $cjknormal-invert;
 $link-focus-border: $cjknormal;
 
 // Section
-$section-padding: 1rem 1.5rem;
+$section-padding: 1.5rem 1.5rem;
 
 // Import Bulma and Buefy styles
 @import "~bulma";
