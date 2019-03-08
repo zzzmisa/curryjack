@@ -2,18 +2,26 @@
   <section class="section container">
     <div class="columns is-centered is-multiline">
       <div class="column is-one-third" v-for="(id, index) in hand" :key="id">
-        <CjkCurry v-bind:id="id" v-bind:tag="(index + 1) + '杯目'"/>
+        <CjkCurry
+          v-bind:id="id"
+          v-bind:tag="(index + 1) + '杯目'"
+          v-on:curry="isDrawModalActive = true; selectedId=$event"
+        />
       </div>
     </div>
     <b-message type="is-warning" v-if="stopDrawFlg">カレーのおかわりは{{maxHand}}杯までだよ</b-message>
     <div class="buttons is-centered">
-      <button class="button is-medium is-cjknormal" v-bind:disabled="stopDrawFlg" @click="draw">もう一枚引く</button>
+      <button
+        class="button is-medium is-cjknormal"
+        v-bind:disabled="stopDrawFlg"
+        @click="draw"
+      >もう一枚引く</button>
       <router-link :to="{ path: 'result', query: { h: hand }}">
         <button class="button is-medium is-cjkstrong">結果を見る</button>
       </router-link>
     </div>
     <b-modal :active.sync="isDrawModalActive" has-modal-card>
-      <CjkDrawModal v-bind:id="hand[hand.length - 1]" v-bind:title="hand.length + '杯目のカレー'"/>
+      <CjkDrawModal v-bind:id="selectedId" v-bind:title="hand.length + '杯目のカレー'"/>
     </b-modal>
   </section>
 </template>
@@ -34,9 +42,10 @@ export default {
     return {
       deck: [], //デッキ
       hand: [], //手札
+      selectedId: "",
+      isDrawModalActive: false,
       maxHand: config.maxHand,
-      stopDrawFlg: false,
-      isDrawModalActive: false
+      stopDrawFlg: false
     };
   },
   created() {
@@ -48,13 +57,17 @@ export default {
       const rand = Math.floor(Math.random() * this.deck.length);
       this.hand.push(this.deck[rand].id);
       this.deck.splice(rand, 1);
+      //デッキの残り枚数が0になった時
       if (this.deck.length === 0) {
         this.stopDrawFlg = true;
       }
+      //手札の最大枚数を超える時
       if (this.hand.length >= config.maxHand) {
         this.stopDrawFlg = true;
       }
-      if(this.hand.length != 1){
+      //2枚目以降カードを引く時
+      if (this.hand.length != 1) {
+        this.selectedId = this.hand[this.hand.length - 1];
         this.isDrawModalActive = true;
       }
     }
@@ -64,8 +77,4 @@ export default {
 
 <style scoped>
 @import url(https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css);
-
-.section {
-  padding: 1rem 1.5rem
-}
 </style>

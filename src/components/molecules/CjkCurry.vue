@@ -1,12 +1,12 @@
 <template>
-  <div class="box">
+  <a class="box" v-on:click="$emit('curry', id)">
     <figure
       class="image is-3by2"
       :style="{ backgroundImage: 'url(' + require('@/assets/curries/'+id+'.jpg') + ')' }"
     >
       <span class="tag is-light is-rounded is-medium">{{ tag }}</span>
     </figure>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -32,8 +32,10 @@ figure {
   background-size: cover;
   background-position: center;
 }
+
 .box {
   padding: 8px;
+  margin: 0px 0px 8px 0px;
 }
 
 .tag {

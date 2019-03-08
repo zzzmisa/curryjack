@@ -3,14 +3,16 @@
     <section class="section">
       <CjkResult v-bind:total="total"/>
     </section>
-    <section class="section">
+    <section class="section container">
       <div class="columns is-centered is-multiline">
         <div class="column is-one-third" v-for="(curry, index) in curries" :key="index">
+          <CjkCurry
+            v-bind:id="curry.id"
+            v-bind:tag="(index + 1) + '杯目'"
+            v-on:curry="isDrawModalActive = true; selectedId=$event"
+          />
           <template v-if="total <= cjscore">
             <CjkCurryDetail v-bind:curry="curry" v-bind:tag="(index + 1) + '杯目'"/>
-          </template>
-          <template v-else>
-            <CjkCurry v-bind:id="curry.id" v-bind:tag="(index + 1) + '杯目'"/>
           </template>
         </div>
       </div>
@@ -19,6 +21,9 @@
           <button class="button is-medium is-cjknormal">もう一度遊ぶ</button>
         </router-link>
       </div>
+      <b-modal :active.sync="isDrawModalActive" has-modal-card>
+        <CjkDrawModal v-bind:id="selectedId" v-bind:title="hand.length + '杯目のカレー'"/>
+      </b-modal>
     </section>
     <section class="section">
       <CjkShare v-bind:total="total"/>
@@ -29,6 +34,7 @@
 <script>
 import CjkCurryDetail from "@/components/molecules/CjkCurryDetail.vue";
 import CjkCurry from "@/components/molecules/CjkCurry.vue";
+import CjkDrawModal from "@/components/organsms/CjkDrawModal.vue";
 import CjkResult from "@/components/molecules/CjkResult.vue";
 import CjkShare from "@/components/molecules/CjkShare.vue";
 import deck from "@/constants/curries.js";
@@ -39,6 +45,7 @@ export default {
   components: {
     CjkCurryDetail,
     CjkCurry,
+    CjkDrawModal,
     CjkResult,
     CjkShare
   },
@@ -51,6 +58,8 @@ export default {
     return {
       curries: [],
       total: 0,
+      selectedId: "",
+      isDrawModalActive: false,
       cjscore: config.cjscore
     };
   },

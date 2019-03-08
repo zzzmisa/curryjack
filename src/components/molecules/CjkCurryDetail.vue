@@ -1,13 +1,5 @@
 <template>
   <div>
-    <div class="box">
-      <figure
-        class="image is-3by2"
-        :style="{ backgroundImage: 'url(' + require('@/assets/curries/'+curry.id+'.jpg') + ')' }"
-      >
-        <span class="tag is-light is-rounded is-medium">{{ tag }}</span>
-      </figure>
-    </div>
     <a class="box" :href="curry.source" target="_blank">
       <figure class="image is-3by2">
         <div class="section">
@@ -74,13 +66,5 @@ p {
 
 .subtitle {
   font-family: "M PLUS Rounded 1c", sans-serif;
-}
-
-.tag {
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.8;
 }
 </style>
