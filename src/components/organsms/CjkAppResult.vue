@@ -26,7 +26,7 @@
       </b-modal>
     </section>
     <section class="section">
-      <CjkShare v-bind:total="total"/>
+      <CjkRsultShare v-bind:total="total"/>
     </section>
   </div>
 </template>
@@ -36,7 +36,7 @@ import CjkCurryDetail from "@/components/molecules/CjkCurryDetail.vue";
 import CjkCurry from "@/components/molecules/CjkCurry.vue";
 import CjkDrawModal from "@/components/organsms/CjkDrawModal.vue";
 import CjkResult from "@/components/molecules/CjkResult.vue";
-import CjkShare from "@/components/molecules/CjkShare.vue";
+import CjkRsultShare from "@/components/molecules/CjkRsultShare.vue";
 import deck from "@/constants/curries.js";
 import config from "@/constants/config.js";
 
@@ -47,7 +47,7 @@ export default {
     CjkCurry,
     CjkDrawModal,
     CjkResult,
-    CjkShare
+    CjkRsultShare
   },
   props: {
     hand: {

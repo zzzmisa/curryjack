@@ -1,49 +1,38 @@
 <template>
-  <div>
-    <p class="is-size-5 cjkmsgshare">結果をシェアする</p>
-    <div class="buttons is-centered">
-      <a class="button is-cjktwitter" :href="twitter" title="Twitterでシェア" target="_blank">
-        <span class="icon">
-          <i class="fab fa-twitter"></i>
-        </span>
-        <span>Twitter</span>
-      </a>
-      <a class="button is-cjkfacebook" :href="facebook" title="Facebookでシェア" target="_blank">
-        <span class="icon">
-          <i class="fab fa-facebook"></i>
-        </span>
-        <span>Facebook</span>
-      </a>
-      <a class="button is-cjkline" :href="line" title="LINEでシェア" target="_blank">
-        <span class="icon">
-          <i class="fab fa-line"></i>
-        </span>
-        <span>Line</span>
-      </a>
-    </div>
+  <div class="buttons">
+    <a
+      :href="twitter"
+      title="Twitterでシェア"
+      class="button is-cjktwitter"
+      target="_blank"
+      rel="nofollow"
+    >
+      <b-icon pack="fab" icon="twitter"></b-icon>
+    </a>
+    <a
+      :href="facebook"
+      title="Facebookでシェア"
+      class="button is-cjkfacebook"
+      target="_blank"
+      rel="nofollow"
+    >
+      <b-icon pack="fab" icon="facebook"></b-icon>
+    </a>
+    <a :href="line" title="Lineでシェア" class="button is-cjkline" target="_blank" rel="nofollow">
+      <b-icon pack="fab" icon="line"></b-icon>
+    </a>
+    <a href="https://github.com/zzzmisa/curryjack" title="Github" class="button" target="_blank" rel="nofollow">
+      <b-icon pack="fab" icon="github"></b-icon>
+      <span>Star</span>
+    </a>
   </div>
 </template>
 
 <script>
 import config from "@/constants/config.js";
 
-function msg(total) {
-  if (total === config.cjscore) {
-    return "パーフェクト！！";
-  } else if (total > config.cjscor) {
-    return "アウト！！";
-  } else {
-    return "あと少し！！";
-  }
-}
-
 export default {
   name: "CjkShare",
-  props: {
-    total: {
-      type: Number
-    }
-  },
   data: function() {
     return {
       url: config.url
@@ -52,10 +41,8 @@ export default {
   computed: {
     msg: function() {},
     twitter: function() {
-      const url = encodeURIComponent(config.url + "/#" + this.$route.fullPath);
-      const text = encodeURIComponent(
-        this.total.toLocaleString() + "円 " + msg(this.total)
-      );
+      const url = encodeURIComponent(config.url);
+      const text = encodeURIComponent("カレージャックで遊ぼう！");
       const hashtags = encodeURIComponent("カレージャック");
       const twurl =
         "https://twitter.com/intent/tweet?text=" +
@@ -67,32 +54,17 @@ export default {
       return twurl;
     },
     facebook: function() {
-      const url = encodeURIComponent(config.url + "/#" + this.$route.fullPath);
-      const fburl =
-        "https://www.facebook.com/sharer/sharer.php?u=" +
-        url +
-        "&t=" +
-        msg(this.total);
+      const url = encodeURIComponent(config.url);
+      const hashtag = encodeURIComponent("カレージャック");
+      const fburl = "https://www.facebook.com/sharer/sharer.php?u=" + url;
       return fburl;
     },
     line: function() {
-      const url = encodeURIComponent(config.url + "/#" + this.$route.fullPath);
-      const text = encodeURIComponent(
-        this.total.toLocaleString() +
-          "円 " +
-          msg(this.total) +
-          " カレージャック "
-      );
+      const url = encodeURIComponent(config.url);
+      const text = encodeURIComponent("カレージャックで遊ぼう！");
       const lineurl = "http://line.me/R/msg/text/?" + text + url;
       return lineurl;
     }
   }
 };
 </script>
-
-<style scoped>
-.cjkmsgshare {
-  margin-bottom: 1.5rem;
-}
-</style>
-
