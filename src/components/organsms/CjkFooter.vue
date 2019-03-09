@@ -8,7 +8,7 @@
               <strong>カレージャック</strong>とは
             </h4>
             <p>
-              <a href="https://www.facebook.com/opendatacurry/" target="_blank">#オープンデータカレー</a> のカレーデータを使ったゲームアプリです。
+              <a href="https://www.facebook.com/opendatacurry/" target="_blank">#オープンデータカレー</a> のオープンデータを使ったゲームアプリです。
               <br>気に入ったらシェア・Githubのスターをお願いします😃
             </p>
           </div>

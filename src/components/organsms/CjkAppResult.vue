@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="has-text-centered">
     <section class="section">
       <CjkResult v-bind:total="total"/>
     </section>
-    <section class="section container">
+    <section class="section contain er">
       <div class="columns is-centered is-multiline">
         <div class="column is-one-third" v-for="(curry, index) in curries" :key="index">
           <CjkCurry
