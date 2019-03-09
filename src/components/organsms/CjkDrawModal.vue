@@ -8,7 +8,7 @@
         <img :src="require('@/assets/curries/'+ id +'.jpg')">
       </figure>
     </section>
-    <footer class="modal-card-foot has-background-cjklight is-centered">
+    <footer class="modal-card-foot has-background-cjklight">
       <button class="button is-cjknormal" @click="$parent.close()">OK</button>
     </footer>
   </div>
@@ -32,11 +32,15 @@ export default {
 <style scoped>
 @import url(https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c);
 
-.modal-card-head{
-  font-family: 'M PLUS Rounded 1c', sans-serif;
+.modal-card-head {
+  font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
 .modal-card-body {
   padding: 8px 8px 0px 8px;
+}
+
+.modal-card-foot {
+  justify-content: center;
 }
 </style>

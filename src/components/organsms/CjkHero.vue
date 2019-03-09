@@ -1,5 +1,5 @@
 <template>
-  <section class="section hero has-text-centered">
+  <section class="section hero">
     <router-link to="/">
       <h1 class="title">
         <img alt="カレージャック" src="@/assets/logo.png">

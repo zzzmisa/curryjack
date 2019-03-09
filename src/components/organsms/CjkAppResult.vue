@@ -1,5 +1,5 @@
 <template>
-  <div class="has-text-centered">
+  <div>
     <section class="section">
       <CjkResult v-bind:total="total"/>
     </section>
