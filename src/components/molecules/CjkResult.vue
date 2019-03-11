@@ -14,9 +14,17 @@
         class="is-size-5"
       >{{ cjscore.toLocaleString() }}円を{{ (total-cjscore).toLocaleString() }}円オーバー</p>
     </div>
-    <div v-else>
+    <div v-else-if="total > cjscore-1000">
       <img alt="more" src="@/assets/more.png">
       <p class="has-text-weight-bold is-size-1 title">もう少し！！</p>
+      <p class="is-size-3">合計{{total.toLocaleString()}}円</p>
+      <p
+        class="is-size-3"
+      >{{ cjscore.toLocaleString() }}円まであと{{ (cjscore - total).toLocaleString() }}円</p>
+    </div>
+    <div v-else>
+      <img alt="more" src="@/assets/hungry.png">
+      <p class="has-text-weight-bold is-size-1 title">まだまだ！！</p>
       <p class="is-size-3">合計{{total.toLocaleString()}}円</p>
       <p
         class="is-size-3"
