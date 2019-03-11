@@ -5,11 +5,20 @@
     </header>
     <section class="modal-card-body">
       <div class="content has-text-left">
-        <h2>1人で遊ぶ場合</h2>2,100円に近づけます。超えたらアウトです。
-        <h2>2人以上で遊ぶ場合</h2>それぞれのスマートフォンなどで、カレージャックを開きます。
+        <h3>基本ルール</h3>
+        <p>
+          カレーの写真を見て値段を推測します。
+          <br>
+          合計値が2,100円に近づくように、カレーの写真を引きます。<br>
+          カレーの写真は{{maxHand}}枚以下の範囲内で、好きなだけ引くことができます。
+          <br>ただし2,100円を超えたら無条件にアウト（ブラックジャックで言うBust）負けです。
+          <br>
+        </p>
+        <h3>2人以上で遊ぶ場合</h3>
+        それぞれのスマートフォンなどで、カレージャックを開きます。
         <br>お互いのカードは見えるようにしておきます。
-        <br>カレーカードをもう一枚引く（Hit）か、
-        それ以上カードを引かないで勝負をする（Stand）か順番に選択していきます。
+        <br>カレーの写真をもう一枚引く（ブラックジャックで言うHit）か、
+        それ以上引かないで勝負をする（ブラックジャックで言うStand）かを順番に選択していきます。
         <br>新しく引いたカードは皆に見せます。
         <br>全員がStandを選ぶまで順番を回します。
         <br>最後に全員で一斉に結果を見ます。
@@ -23,15 +32,26 @@
 </template>
 
 <script>
+import config from "@/constants/config.js";
+
 export default {
-  name: "CjkGuideModal"
+  name: "CjkGuideModal",
+  data: function() {
+    return {
+      maxHand: config.maxHand
+    };
+  }
 };
 </script>
 
 <style scoped>
 @import url(https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c);
 
-.modal-card-head{
-  font-family: 'M PLUS Rounded 1c', sans-serif;
+.modal-card-head {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.modal-card-foot {
+  justify-content: center;
 }
 </style>
