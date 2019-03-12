@@ -18,7 +18,7 @@
       </div>
       <div class="buttons is-centered">
         <router-link to="/">
-          <button class="button is-medium is-cjknormal">もう一度遊ぶ</button>
+          <button class="button is-medium is-cjknormal">最初から遊ぶ</button>
         </router-link>
       </div>
       <b-modal :active.sync="isDrawModalActive" has-modal-card>
