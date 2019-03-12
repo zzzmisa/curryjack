@@ -52,7 +52,7 @@ $section-padding: 1.5rem 1.5rem;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: #F7F6E0;  
+  background-color: #F7F6E0;
 }
 
 </style>

@@ -36,15 +36,14 @@
 </template>
 
 <script>
-import CjkShare from "@/components/molecules/CjkShare.vue";
-import config from "@/constants/config.js";
+import CjkShare from '@/components/molecules/CjkShare.vue'
 
 export default {
-  name: "CjkFooter",
+  name: 'CjkFooter',
   components: {
     CjkShare
-  },
-};
+  }
+}
 </script>
 
 <style scoped>

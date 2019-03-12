@@ -20,19 +20,19 @@
 </template>
 
 <script>
-import CjkGuideModal from "@/components/organsms/CjkGuideModal.vue";
+import CjkGuideModal from '@/components/organsms/CjkGuideModal.vue'
 
 export default {
-  name: "CjkHero",
+  name: 'CjkHero',
   components: {
     CjkGuideModal
   },
-  data() {
+  data () {
     return {
       isGuideModalActive: false
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped>

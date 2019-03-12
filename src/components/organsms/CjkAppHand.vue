@@ -27,52 +27,52 @@
 </template>
 
 <script>
-import CjkCurry from "@/components/molecules/CjkCurry.vue";
-import CjkDrawModal from "@/components/organsms/CjkDrawModal.vue";
-import config from "@/constants/config.js";
-import deck from "@/constants/curries.js";
+import CjkCurry from '@/components/molecules/CjkCurry.vue'
+import CjkDrawModal from '@/components/organsms/CjkDrawModal.vue'
+import config from '@/constants/config.js'
+import deck from '@/constants/curries.js'
 
 export default {
-  name: "CjkAppHand",
+  name: 'CjkAppHand',
   components: {
     CjkCurry,
     CjkDrawModal
   },
-  data: function() {
+  data: function () {
     return {
-      deck: [], //デッキ
-      hand: [], //手札
-      selectedId: "",
+      deck: [], // デッキ
+      hand: [], // 手札
+      selectedId: '',
       isDrawModalActive: false,
       maxHand: config.maxHand,
       stopDrawFlg: false
-    };
+    }
   },
-  created() {
-    Object.assign(this.deck, deck);
-    this.draw();
+  created () {
+    Object.assign(this.deck, deck)
+    this.draw()
   },
   methods: {
-    draw: function() {
-      const rand = Math.floor(Math.random() * this.deck.length);
-      this.hand.push(this.deck[rand].id);
-      this.deck.splice(rand, 1);
-      //デッキの残り枚数が0になった時
+    draw: function () {
+      const rand = Math.floor(Math.random() * this.deck.length)
+      this.hand.push(this.deck[rand].id)
+      this.deck.splice(rand, 1)
+      // デッキの残り枚数が0になった時
       if (this.deck.length === 0) {
-        this.stopDrawFlg = true;
+        this.stopDrawFlg = true
       }
-      //手札の最大枚数を超える時
+      // 手札の最大枚数を超える時
       if (this.hand.length >= config.maxHand) {
-        this.stopDrawFlg = true;
+        this.stopDrawFlg = true
       }
-      //2枚目以降カードを引く時
-      if (this.hand.length != 1) {
-        this.selectedId = this.hand[this.hand.length - 1];
-        this.isDrawModalActive = true;
+      // 2枚目以降カードを引く時
+      if (this.hand.length !== 1) {
+        this.selectedId = this.hand[this.hand.length - 1]
+        this.isDrawModalActive = true
       }
     }
   }
-};
+}
 </script>
 
 <style scoped>

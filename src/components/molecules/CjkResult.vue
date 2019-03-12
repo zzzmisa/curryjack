@@ -34,10 +34,10 @@
 </template>
 
 <script>
-import config from "@/constants/config.js";
+import config from '@/constants/config.js'
 
 export default {
-  name: "CjkResult",
+  name: 'CjkResult',
 
   props: {
     total: {
@@ -45,10 +45,10 @@ export default {
       required: true
     }
   },
-  data: function() {
+  data: function () {
     return {
       cjscore: config.cjscore
-    };
+    }
   }
-};
+}
 </script>

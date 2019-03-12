@@ -32,16 +32,16 @@
 </template>
 
 <script>
-import config from "@/constants/config.js";
+import config from '@/constants/config.js'
 
 export default {
-  name: "CjkGuideModal",
-  data: function() {
+  name: 'CjkGuideModal',
+  data: function () {
     return {
       maxHand: config.maxHand
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped>

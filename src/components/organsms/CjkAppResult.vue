@@ -32,16 +32,16 @@
 </template>
 
 <script>
-import CjkCurryDetail from "@/components/molecules/CjkCurryDetail.vue";
-import CjkCurry from "@/components/molecules/CjkCurry.vue";
-import CjkDrawModal from "@/components/organsms/CjkDrawModal.vue";
-import CjkResult from "@/components/molecules/CjkResult.vue";
-import CjkRsultShare from "@/components/molecules/CjkRsultShare.vue";
-import deck from "@/constants/curries.js";
-import config from "@/constants/config.js";
+import CjkCurryDetail from '@/components/molecules/CjkCurryDetail.vue'
+import CjkCurry from '@/components/molecules/CjkCurry.vue'
+import CjkDrawModal from '@/components/organsms/CjkDrawModal.vue'
+import CjkResult from '@/components/molecules/CjkResult.vue'
+import CjkRsultShare from '@/components/molecules/CjkRsultShare.vue'
+import deck from '@/constants/curries.js'
+import config from '@/constants/config.js'
 
 export default {
-  name: "CjkAppResult",
+  name: 'CjkAppResult',
   components: {
     CjkCurryDetail,
     CjkCurry,
@@ -54,32 +54,31 @@ export default {
       type: Array
     }
   },
-  data: function() {
+  data: function () {
     return {
       curries: [],
       total: 0,
-      selectedId: "",
+      selectedId: '',
       isDrawModalActive: false,
       cjscore: config.cjscore
-    };
-  },
-  created() {
-    for (let id of this.hand) {
-      this.curries.push(this.findCurry(id));
     }
-    this.total = this.curries.reduce((p, c) => p + c.price, 0);
+  },
+  created () {
+    for (let id of this.hand) {
+      this.curries.push(this.findCurry(id))
+    }
+    this.total = this.curries.reduce((p, c) => p + c.price, 0)
   },
   methods: {
-    findCurry: function(id) {
-      return deck.find(function(el) {
-        return el.id === id;
-      }, this);
+    findCurry: function (id) {
+      return deck.find(function (el) {
+        return el.id === id
+      }, this)
     }
   }
-};
+}
 </script>
 
 <style scoped>
 @import url(https://use.fontawesome.com/releases/v5.2.0/css/all.css);
 </style>
-

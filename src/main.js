@@ -2,10 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import Buefy from 'buefy' //buefy
-//import 'buefy/dist/buefy.css' //buefy
+import Buefy from 'buefy' // buefy
+// import 'buefy/dist/buefy.css' //buefy
 
-Vue.use(Buefy) //buefy
+Vue.use(Buefy) // buefy
 
 Vue.config.productionTip = false
 

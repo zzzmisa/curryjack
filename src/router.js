@@ -27,7 +27,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "faq" */ '@/components/templates/CjkFaqView.vue'),
+      component: () => import(/* webpackChunkName: "faq" */ '@/components/templates/CjkFaqView.vue')
     }
   ],
   scrollBehavior (to, from, savedPosition) {
@@ -39,7 +39,7 @@ export default new Router({
     })
   },
   stringifyQuery: (params) => {
-    if (0 == Object.keys(params).length) {
+    if (Object.keys(params).length === 0) {
       return ''
     } else {
       return '?' + queryString.stringify(params, {

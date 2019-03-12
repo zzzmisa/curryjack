@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "CjkCurryDetail",
+  name: 'CjkCurryDetail',
 
   props: {
     curry: {
@@ -25,7 +25,7 @@ export default {
       type: String
     }
   }
-};
+}
 </script>
 
 <style scoped>

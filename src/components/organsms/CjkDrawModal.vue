@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "CjkDrawModal",
+  name: 'CjkDrawModal',
 
   props: {
     id: {
@@ -26,7 +26,7 @@ export default {
       type: String
     }
   }
-};
+}
 </script>
 
 <style scoped>

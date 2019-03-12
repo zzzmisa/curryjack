@@ -29,42 +29,40 @@
 </template>
 
 <script>
-import config from "@/constants/config.js";
+import config from '@/constants/config.js'
 
 export default {
-  name: "CjkShare",
-  data: function() {
+  name: 'CjkShare',
+  data: function () {
     return {
       url: config.url
-    };
+    }
   },
   computed: {
-    msg: function() {},
-    twitter: function() {
-      const url = encodeURIComponent(config.url);
-      const text = encodeURIComponent("カレージャックで遊ぼう！");
-      const hashtags = encodeURIComponent("カレージャック");
+    twitter: function () {
+      const url = encodeURIComponent(config.url)
+      const text = encodeURIComponent('カレージャックで遊ぼう！')
+      const hashtags = encodeURIComponent('カレージャック')
       const twurl =
-        "https://twitter.com/intent/tweet?text=" +
+        'https://twitter.com/intent/tweet?text=' +
         text +
-        "&hashtags=" +
+        '&hashtags=' +
         hashtags +
-        "&url=" +
-        url;
-      return twurl;
+        '&url=' +
+        url
+      return twurl
     },
-    facebook: function() {
-      const url = encodeURIComponent(config.url);
-      const hashtag = encodeURIComponent("カレージャック");
-      const fburl = "https://www.facebook.com/sharer/sharer.php?u=" + url;
-      return fburl;
+    facebook: function () {
+      const url = encodeURIComponent(config.url)
+      const fburl = 'https://www.facebook.com/sharer/sharer.php?u=' + url
+      return fburl
     },
-    line: function() {
-      const url = encodeURIComponent(config.url);
-      const text = encodeURIComponent("カレージャックで遊ぼう！");
-      const lineurl = "http://line.me/R/msg/text/?" + text + url;
-      return lineurl;
+    line: function () {
+      const url = encodeURIComponent(config.url)
+      const text = encodeURIComponent('カレージャックで遊ぼう！')
+      const lineurl = 'http://line.me/R/msg/text/?' + text + url
+      return lineurl
     }
   }
-};
+}
 </script>

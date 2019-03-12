@@ -25,69 +25,68 @@
 </template>
 
 <script>
-import config from "@/constants/config.js";
+import config from '@/constants/config.js'
 
-function msg(total) {
+function msg (total) {
   if (total === config.cjscore) {
-    return "パーフェクト！！";
+    return 'パーフェクト！！'
   } else if (total > config.cjscor) {
-    return "アウト！！";
+    return 'アウト！！'
   } else {
-    return "あと少し！！";
+    return 'あと少し！！'
   }
 }
 
 export default {
-  name: "CjkRsultShare",
+  name: 'CjkRsultShare',
   props: {
     total: {
       type: Number
     }
   },
-  data: function() {
+  data: function () {
     return {
       url: config.url
-    };
+    }
   },
   computed: {
-    msg: function() {},
-    twitter: function() {
-      const url = encodeURIComponent(config.url + "/#" + this.$route.fullPath);
+    twitter: function () {
+      const url = encodeURIComponent(config.url + '/#' + this.$route.fullPath)
       const text = encodeURIComponent(
-        this.total.toLocaleString() + "円 " + msg(this.total)
-      );
-      const hashtags = encodeURIComponent("カレージャック");
+        this.total.toLocaleString() + '円 ' + msg(this.total)
+      )
+      const hashtags = encodeURIComponent('カレージャック')
       const twurl =
-        "https://twitter.com/intent/tweet?text=" +
+        'https://twitter.com/intent/tweet?text=' +
         text +
-        "&hashtags=" +
+        '&hashtags=' +
         hashtags +
-        "&url=" +
-        url;
-      return twurl;
+        '&url=' +
+        url
+      return twurl
     },
-    facebook: function() {
-      const url = encodeURIComponent(config.url + "/#" + this.$route.fullPath);
+    facebook: function () {
+      const url = encodeURIComponent(config.url + '/#' + this.$route.fullPath)
       const fburl =
-        "https://www.facebook.com/sharer/sharer.php?u=" +
+        'https://www.facebook.com/sharer/sharer.php?u=' +
         url +
-        "&t=" +
-        msg(this.total);
-      return fburl;
+        '&t=' +
+        msg(this.total)
+      return fburl
     },
-    line: function() {
-      const url = encodeURIComponent(config.url + "/#" + this.$route.fullPath);
+    line: function () {
+      const url = encodeURIComponent(config.url + '/#' + this.$route.fullPath)
       const text = encodeURIComponent(
         this.total.toLocaleString() +
-          "円 " +
+          '円 ' +
           msg(this.total) +
-          " カレージャック "
-      );
-      const lineurl = "http://line.me/R/msg/text/?" + text + url;
-      return lineurl;
+          ' カレージャック '
+      )
+      const lineurl = 'http://line.me/R/msg/text/?' + text + url
+      return lineurl
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -95,4 +94,3 @@ export default {
   margin-bottom: 1.5rem;
 }
 </style>
-

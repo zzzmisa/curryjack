@@ -8,18 +8,18 @@
 
 <script>
 // @ is an alias to /src
-import CjkHero from "@/components/organsms/CjkHero.vue";
-import CjkAppHand from "@/components/organsms/CjkAppHand.vue";
-import CjkFooter from "@/components/organsms/CjkFooter.vue";
+import CjkHero from '@/components/organsms/CjkHero.vue'
+import CjkAppHand from '@/components/organsms/CjkAppHand.vue'
+import CjkFooter from '@/components/organsms/CjkFooter.vue'
 
 export default {
-  name: "CjkFirstView",
+  name: 'CjkFirstView',
   components: {
     CjkHero,
     CjkAppHand,
     CjkFooter
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "CjkCurry",
+  name: 'CjkCurry',
 
   props: {
     id: {
@@ -21,7 +21,7 @@ export default {
       type: String
     }
   }
-};
+}
 </script>
 
 <style scoped>

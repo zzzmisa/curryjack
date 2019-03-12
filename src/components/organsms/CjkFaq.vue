@@ -36,8 +36,8 @@
 
 <script>
 export default {
-  name: "CjkFaq"
-};
+  name: 'CjkFaq'
+}
 </script>
 
 <style scoped>
