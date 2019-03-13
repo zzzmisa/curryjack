@@ -12,6 +12,7 @@
     "buefy": "^0.7.2",
     "query-string": "^6.2.0",
     "vue": "^2.5.22",
+    "vue-analytics": "^5.16.4",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
