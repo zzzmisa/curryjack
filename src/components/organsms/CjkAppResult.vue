@@ -3,7 +3,7 @@
     <section class="section">
       <CjkResult v-bind:total="total"/>
     </section>
-    <section class="section contain er">
+    <section class="section container">
       <div class="columns is-centered is-multiline">
         <div class="column is-one-third" v-for="(curry, index) in curries" :key="index">
           <CjkCurry
@@ -16,6 +16,7 @@
           </template>
         </div>
       </div>
+      <b-message type="is-warning" v-if="total > cjscore">アウトだとカレーの詳細は表示されないよ。</b-message>
       <div class="buttons is-centered">
         <router-link to="/">
           <button class="button is-medium is-cjknormal">最初から遊ぶ</button>
@@ -51,7 +52,8 @@ export default {
   },
   props: {
     hand: {
-      type: Array
+      type: Array,
+      required: true
     }
   },
   data: function () {
@@ -65,6 +67,9 @@ export default {
   },
   created () {
     for (let id of this.hand) {
+      if (this.findCurry(id) === undefined) {
+        console.log('だめ')
+      }
       this.curries.push(this.findCurry(id))
     }
     this.total = this.curries.reduce((p, c) => p + c.price, 0)
