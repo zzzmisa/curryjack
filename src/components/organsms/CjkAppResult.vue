@@ -68,7 +68,7 @@ export default {
   created () {
     for (let id of this.hand) {
       if (this.findCurry(id) === undefined) {
-        console.log('だめ')
+        this.$router.push('/404')
       }
       this.curries.push(this.findCurry(id))
     }
