@@ -22,6 +22,9 @@
           <aside class="menu">
             <ul class="menu-list">
               <li>
+                <a href="https://blog.zzzmisa.com/notice" target="_blank">免責事項</a>
+              </li>
+              <li>
                 <a href="https://blog.zzzmisa.com/privacy" target="_blank">プライバシーポリシー</a>
               </li>
               <li>

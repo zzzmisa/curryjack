@@ -1,5 +1,6 @@
 <template>
   <section class="section container">
+
     <div class="content has-text-left">
       <dl>
         <dt>このサービスは？</dt>
@@ -13,6 +14,7 @@
         <dd>
           <a href="https://www.facebook.com/opendatacurry/" target="_blank">#オープンデータカレー</a>のデータを使っています。
           <br>メニュー名や値段はオープンデータカレーのデータを元に入力しています。
+          <br>情報が古い可能性もありますのでご注意ください。
         </dd>
         <dt>カレーのデータを追加してほしい</dt>
         <dd>
