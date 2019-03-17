@@ -38,7 +38,7 @@ function msg (total) {
 }
 
 export default {
-  name: 'CjkRsultShare',
+  name: 'CjkResultShare',
   props: {
     total: {
       type: Number

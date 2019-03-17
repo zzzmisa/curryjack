@@ -27,7 +27,7 @@
       </b-modal>
     </section>
     <section class="section">
-      <CjkRsultShare v-bind:total="total"/>
+      <CjkResultShare v-bind:total="total"/>
     </section>
   </div>
 </template>
@@ -37,9 +37,15 @@ import CjkCurryDetail from '@/components/molecules/CjkCurryDetail.vue'
 import CjkCurry from '@/components/molecules/CjkCurry.vue'
 import CjkDrawModal from '@/components/organsms/CjkDrawModal.vue'
 import CjkResult from '@/components/molecules/CjkResult.vue'
-import CjkRsultShare from '@/components/molecules/CjkRsultShare.vue'
+import CjkResultShare from '@/components/molecules/CjkResultShare.vue'
 import deck from '@/constants/curries.js'
 import config from '@/constants/config.js'
+
+function findCurry (id) {
+  return deck.find(function (el) {
+    return el.id === id
+  }, this)
+}
 
 export default {
   name: 'CjkAppResult',
@@ -48,7 +54,7 @@ export default {
     CjkCurry,
     CjkDrawModal,
     CjkResult,
-    CjkRsultShare
+    CjkResultShare
   },
   props: {
     hand: {
@@ -59,7 +65,6 @@ export default {
   data: function () {
     return {
       curries: [],
-      total: 0,
       selectedId: '',
       isDrawModalActive: false,
       cjscore: config.cjscore
@@ -67,18 +72,15 @@ export default {
   },
   created () {
     for (let id of this.hand) {
-      if (this.findCurry(id) === undefined) {
+      if (findCurry(id) === undefined) {
         this.$router.push('/404')
       }
-      this.curries.push(this.findCurry(id))
+      this.curries.push(findCurry(id))
     }
-    this.total = this.curries.reduce((p, c) => p + c.price, 0)
   },
-  methods: {
-    findCurry: function (id) {
-      return deck.find(function (el) {
-        return el.id === id
-      }, this)
+  computed: {
+    total () {
+      return this.curries.reduce((p, c) => p + c.price, 0)
     }
   }
 }
