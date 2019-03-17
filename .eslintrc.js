@@ -13,5 +13,13 @@ module.exports = {
   },
   parserOptions: {
     parser: 'babel-eslint'
-  }
+  },
+  overrides: [
+    {
+      'files': ['*-test.js', '*.spec.js'],
+      'rules': {
+        'no-unused-expressions': 'off'
+      }
+    }
+  ]
 }
