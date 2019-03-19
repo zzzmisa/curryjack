@@ -1,6 +1,5 @@
 <template>
   <section class="section container">
-
     <div class="content has-text-left">
       <dl>
         <dt>このサービスは？</dt>
@@ -21,10 +20,25 @@
           <a href="https://www.facebook.com/opendatacurry/" target="_blank">#オープンデータカレー</a>に投稿すれば、そのうち追加されるかもしれません。
           <br>プログラムがわかる方はプルリクを送っていただくと早いかもしれません。
         </dd>
+        <dt>データを修正してほしい</dt>
+        <dd>
+          カレーのデータは
+          <a href="https://www.facebook.com/opendatacurry/" target="_blank">#オープンデータカレー</a>の投稿をもとに掲載を行なっています。
+          <br>データの修正が必要な場合は、
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdmZDfWbJXaHeG3EDmlgfXZXdfZw15Ot0gFwtpNbs3yIhTuJA/viewform"
+            target="_blank"
+          >お問い合わせ</a>、及び元データの投稿に修正依頼コメントを送ってください。
+          <br>ただし、元データの修正については、本アプリ作成者はいかなる関与もいたしません。
+        </dd>
         <dt>不具合を見つけた</dt>
         <dd>
-           不具合の内容、不具合が起きたURL、及び閲覧環境を<a href="https://docs.google.com/forms/d/e/1FAIpQLSdmZDfWbJXaHeG3EDmlgfXZXdfZw15Ot0gFwtpNbs3yIhTuJA/viewform" target="_blank">お問い合わせ</a>から教えてください。<br>
-           （個人が趣味の範囲で開発していますので、必ず対応できる訳ではありません）。
+          不具合の内容、不具合が起きたURL、及び閲覧環境を
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdmZDfWbJXaHeG3EDmlgfXZXdfZw15Ot0gFwtpNbs3yIhTuJA/viewform"
+            target="_blank"
+          >お問い合わせ</a>から教えてください。
+          <br>（個人が趣味の範囲で開発していますので、必ず対応できる訳ではありません）。
         </dd>
         <dt>動作環境は？</dt>
         <dd>以下のブラウザの最新バージョンで動作確認しています。
