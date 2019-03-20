@@ -23,7 +23,7 @@
         </router-link>
       </div>
       <b-modal :active.sync="isDrawModalActive" has-modal-card>
-        <CjkDrawModal v-bind:id="selectedId" v-bind:title="hand.length + '杯目のカレー'"/>
+        <CjkDrawModal v-bind:id="selectedId" v-bind:title="hand.indexOf(selectedId)+1 + '杯目のカレー'"/>
       </b-modal>
     </section>
     <section class="section">

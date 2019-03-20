@@ -21,7 +21,7 @@
       </router-link>
     </div>
     <b-modal :active.sync="isDrawModalActive" has-modal-card>
-      <CjkDrawModal v-bind:id="selectedId" v-bind:title="hand.length + '杯目のカレー'"/>
+      <CjkDrawModal v-bind:id="selectedId" v-bind:title="hand.indexOf(selectedId)+1 + '杯目のカレー'"/>
     </b-modal>
   </section>
 </template>
@@ -44,13 +44,17 @@ export default {
       hand: [], // 手札
       selectedId: '',
       isDrawModalActive: false,
-      maxHand: config.maxHand,
       stopDrawFlg: false
     }
   },
   created () {
     Object.assign(this.deck, deck)
     this.draw()
+  },
+  computed: {
+    maxHand () {
+      return config.maxHand
+    }
   },
   methods: {
     draw: function () {
