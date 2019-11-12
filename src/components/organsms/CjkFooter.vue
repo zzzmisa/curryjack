@@ -30,6 +30,9 @@
               <li>
                 <router-link to="faq">Q&A</router-link>
               </li>
+              <li>
+                <router-link :to="{ path: $t('linkLang') }">{{ $t('footerLang') }}</router-link>
+              </li>
             </ul>
           </aside>
         </div>
@@ -56,3 +59,16 @@ export default {
   margin-top: 3rem;
 }
 </style>
+
+<i18n>
+{
+  "ja": {
+    "linkLang": "/en",
+    "footerLang": "English"
+  },
+  "en": {
+    "linkLang": "/",
+    "footerLang": "日本語"
+  }
+}
+</i18n>

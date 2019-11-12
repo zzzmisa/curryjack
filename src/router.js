@@ -34,6 +34,10 @@ export default new Router({
     {
       path: '/',
       component: RouterView,
+      beforeEnter (to, from, next) {
+        i18n.locale = 'ja'
+        return next()
+      },
       children: children
     },
     {
