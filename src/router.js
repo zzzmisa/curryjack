@@ -2,52 +2,29 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import CjkHandView from '@/components/templates/CjkHandView.vue'
 import queryString from 'query-string'
-import RouterView from '@/components/RouterView.vue'
-import i18n from './i18n'
 
 Vue.use(Router)
-
-const children = [
-  {
-    path: '/',
-    name: 'CjkHandView',
-    component: CjkHandView
-  },
-  {
-    path: 'result',
-    name: 'CjkResultView',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "result" */ '@/components/templates/CjkResultView.vue'),
-    props: (route) => ({ hand: route.query.h })
-  },
-  {
-    path: 'faq',
-    name: 'CjkFaqView',
-    component: () => import(/* webpackChunkName: "faq" */ '@/components/templates/CjkFaqView.vue')
-  }
-]
 
 export default new Router({
   routes: [
     {
       path: '/',
-      component: RouterView,
-      beforeEnter (to, from, next) {
-        i18n.locale = 'ja'
-        return next()
-      },
-      children: children
+      name: 'CjkHandView',
+      component: CjkHandView
     },
     {
-      path: '/en',
-      component: RouterView,
-      beforeEnter (to, from, next) {
-        i18n.locale = 'en'
-        return next()
-      },
-      children: children
+      path: '/result',
+      name: 'CjkResultView',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "result" */ '@/components/templates/CjkResultView.vue'),
+      props: (route) => ({ hand: route.query.h })
+    },
+    {
+      path: '/faq',
+      name: 'CjkFaqView',
+      component: () => import(/* webpackChunkName: "faq" */ '@/components/templates/CjkFaqView.vue')
     },
     {
       path: '*',
