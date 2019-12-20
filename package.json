@@ -5,8 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "serve-en": "VUE_APP_I18N_LOCALE=en VUE_APP_I18N_FALLBACK_LOCALE=en VUE_APP_PUBLICKPATH=en VUE_APP_TEMPLATE=public/index-en.html vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "build-en": "VUE_APP_I18N_LOCALE=en VUE_APP_I18N_FALLBACK_LOCALE=en VUE_APP_PUBLICKPATH=en VUE_APP_TEMPLATE=public/index-en.html vue-cli-service build --dest dist/en",
+    "build": "VUE_APP_TEMPLATE=vue-app-template/index.html vue-cli-service build",
+    "build-en": "VUE_APP_I18N_LOCALE=en VUE_APP_I18N_FALLBACK_LOCALE=en VUE_APP_PUBLICKPATH=en VUE_APP_TEMPLATE=vue-app-template/index-en.html vue-cli-service build --dest dist/en",
     "lint": "vue-cli-service lint",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "test:unit": "vue-cli-service test:unit"
