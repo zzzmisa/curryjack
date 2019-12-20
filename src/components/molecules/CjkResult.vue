@@ -60,7 +60,7 @@ export default {
     "amazing": "素晴らしい！！",
     "bust": "アウト！！",
     "bustMsg": "{cjscore}円を{over}円オーバー",
-    "bitMore!": "もう少し！！",
+    "bitMore": "もう少し！！",
     "bitMoreMsg": "{cjscore}円まであと{left}円",
     "notEvenClose": "まだまだ！！",
     "notEvenCloseMsg": "{cjscore}円まであと{left}円",
