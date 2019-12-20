@@ -3,7 +3,7 @@
     <a class="box" :href="curry.source" target="_blank">
       <figure class="image is-3by2">
         <div class="section">
-          <p class="title">{{curry.price.toLocaleString()}}円</p>
+          <p class="title">{{curry.price.toLocaleString()}}{{ $t('yen') }}</p>
           <p class="subtitle">{{curry.label}}</p>
           <p class="has-text-weight-bold">{{curry.restaurant}}</p>
           <p>{{curry.pref}} {{curry.city}}</p>
@@ -68,3 +68,14 @@ p {
   font-family: "M PLUS Rounded 1c", sans-serif;
 }
 </style>
+
+<i18n>
+{
+  "ja": {
+    "yen": "円"
+  },
+  "en": {
+    "yen": " yen"
+  }
+}
+</i18n>

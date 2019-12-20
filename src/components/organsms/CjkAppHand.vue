@@ -4,24 +4,24 @@
       <div class="column is-one-third" v-for="(id, index) in hand" :key="id">
         <CjkCurry
           v-bind:id="id"
-          v-bind:tag="(index + 1) + '杯目'"
+          v-bind:tag="$t(index + 1)"
           v-on:curry="isDrawModalActive = true; selectedId=$event"
         />
       </div>
     </div>
-    <b-message type="is-warning" v-if="stopDrawFlg">カレーのおかわりは{{maxHand}}杯までだよ</b-message>
+    <b-message type="is-warning" v-if="stopDrawFlg">{{ $t('refillNotice', { maxHand: maxHand }) }}</b-message>
     <div class="buttons is-centered">
       <button
         class="button is-medium is-cjknormal"
         v-bind:disabled="stopDrawFlg"
         @click="draw"
-      >もう一枚引く</button>
+      >{{ $t('drawACard') }}</button>
       <router-link :to="{ path: 'result', query: { h: hand }}">
-        <button class="button is-medium is-cjkstrong">結果を見る</button>
+        <button class="button is-medium is-cjkstrong">{{ $t('showTheResult') }}</button>
       </router-link>
     </div>
     <b-modal :active.sync="isDrawModalActive" has-modal-card>
-      <CjkDrawModal v-bind:id="selectedId" v-bind:title="hand.indexOf(selectedId)+1 + '杯目のカレー'"/>
+      <CjkDrawModal v-bind:id="selectedId" v-bind:title="$t(hand.indexOf(selectedId)+1)"/>
     </b-modal>
   </section>
 </template>
@@ -82,3 +82,30 @@ export default {
 <style scoped>
 @import url(https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css);
 </style>
+
+<i18n>
+{
+  "ja": {
+    "showTheResult": "結果を見る",
+    "drawACard": "もう一枚引く",
+    "refillNotice": "カレーのおかわりは{maxHand}杯までだよ",
+    "1": "1杯目",
+    "2": "2杯目",
+    "3": "3杯目",
+    "4": "4杯目",
+    "5": "5杯目",
+    "6": "6杯目"
+  },
+  "en": {
+    "showTheResult": "Show the result",
+    "drawACard": "Draw a Card",
+    "refillNotice": "You can't eat more than {maxHand} curries",
+    "1": "1st dish",
+    "2": "2nd dish",
+    "3": "3rd dish",
+    "4": "4th dish",
+    "5": "5th dish",
+    "6": "6th dish"
+  }
+}
+</i18n>
