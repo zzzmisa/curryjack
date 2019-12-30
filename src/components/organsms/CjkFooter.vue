@@ -5,11 +5,11 @@
         <div class="column is-7">
           <div class="content">
             <h4 class="title is-5">
-              <strong>カレージャック</strong>とは
+              <strong>{{ $t('whatIsCurryjack') }}</strong>
             </h4>
             <p>
-              <a href="https://www.facebook.com/opendatacurry/" target="_blank">#オープンデータカレー</a> のオープンデータを使ったゲームアプリです。
-              <br>気に入ったらシェア・Githubのスターをお願いします😃
+              <span v-html="$t('curryjackIs')"></span>
+              <br>{{ $t('pleaseShareAndStar') }}
             </p>
           </div>
           <CjkShare/>
@@ -22,13 +22,16 @@
           <aside class="menu">
             <ul class="menu-list">
               <li>
-                <a href="https://blog.zzzmisa.com/notice" target="_blank">免責事項</a>
+                <a href="https://blog.zzzmisa.com/notice" target="_blank">{{ $t('notice') }}</a>
               </li>
               <li>
-                <a href="https://blog.zzzmisa.com/privacy" target="_blank">プライバシーポリシー</a>
+                <a href="https://blog.zzzmisa.com/privacy" target="_blank">{{ $t('privacyPolicy') }}</a>
+              </li>
+              <li v-if="$i18n.locale=='ja'">
+                <router-link to="faq">{{ $t('qanda') }}</router-link>
               </li>
               <li>
-                <router-link to="faq">Q&A</router-link>
+                <a :href="$t('langUrl')">{{ $t('footerLang') }}</a>
               </li>
             </ul>
           </aside>
@@ -56,3 +59,28 @@ export default {
   margin-top: 3rem;
 }
 </style>
+
+<i18n>
+{
+  "ja": {
+    "notice": "免責事項",
+    "privacyPolicy": "プライバシーポリシー",
+    "qanda": "Q&A",
+    "langUrl": "https://curryjack.zzzmisa.com/en",
+    "footerLang": "English",
+    "whatIsCurryjack": "カレージャックとは",
+    "curryjackIs": "<a href='https://www.facebook.com/opendatacurry/' target='_blank'>#オープンデータカレー</a> のオープンデータを使ったゲームアプリです。",
+    "pleaseShareAndStar": "気に入ったらシェア・Githubのスターをお願いします😃"
+  },
+  "en": {
+    "notice": "Notice",
+    "privacyPolicy": "Privacy Policy",
+    "qanda": "Q&A",
+    "langUrl": "https://curryjack.zzzmisa.com/",
+    "footerLang": "日本語",
+    "whatIsCurryjack": "What is Curryjack?",
+    "curryjackIs": "Curryjack is a game app using data of <a href='https://www.facebook.com/opendatacurry/' target='_blank'>#オープンデータカレー</a>.",
+    "pleaseShareAndStar": "Please share this app and click the Github Star below."
+  }
+}
+</i18n>

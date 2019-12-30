@@ -2,11 +2,11 @@
   <section class="section hero">
     <router-link to="/">
       <h1 class="title">
-        <img alt="カレージャック" src="@/assets/logo.png">
+        <img :alt="$t('curryjack')" :src="logoUrl[$i18n.locale]">
       </h1>
     </router-link>
-    <h2 class="subtitle">2,100円に近づけろ！超えたらアウト！
-      <b-icon
+    <h2 class="subtitle">{{ $t('catchphrase') }}
+      <b-icon v-if="$i18n.locale=='ja'"
         pack="fa"
         icon="question-circle"
         type="is-cjknormal"
@@ -21,6 +21,8 @@
 
 <script>
 import CjkGuideModal from '@/components/organsms/CjkGuideModal.vue'
+import LogoJa from '@/assets/logo.png'
+import LogoEn from '@/assets/logo_en.png'
 
 export default {
   name: 'CjkHero',
@@ -30,6 +32,14 @@ export default {
   data () {
     return {
       isGuideModalActive: false
+    }
+  },
+  computed: {
+    logoUrl: function () {
+      return {
+        ja: LogoJa,
+        en: LogoEn
+      }
     }
   }
 }
@@ -43,3 +53,16 @@ img {
 }
 
 </style>
+
+<i18n>
+{
+  "ja": {
+    "catchphrase": "2,100円に近づけろ！超えたらアウト！",
+    "curryjack": "カレージャック"
+  },
+  "en": {
+    "catchphrase": "Get closer to 2,100 yen! Don't exceed it!",
+    "curryjack": "Curryjack"
+  }
+}
+</i18n>

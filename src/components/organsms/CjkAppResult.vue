@@ -8,22 +8,22 @@
         <div class="column is-one-third" v-for="(curry, index) in curries" :key="index">
           <CjkCurry
             v-bind:id="curry.id"
-            v-bind:tag="(index + 1) + '杯目'"
+            v-bind:tag="$t(index + 1)"
             v-on:curry="isDrawModalActive = true; selectedId=$event"
           />
           <template v-if="total <= cjscore">
-            <CjkCurryDetail v-bind:curry="curry" v-bind:tag="(index + 1) + '杯目'"/>
+            <CjkCurryDetail v-bind:curry="curry" v-bind:tag="$t(index + 1)"/>
           </template>
         </div>
       </div>
-      <b-message type="is-warning" v-if="total > cjscore">アウトだとカレーの詳細は表示されないよ。</b-message>
+      <b-message type="is-warning" v-if="total > cjscore">{{ $t('bustMessage') }}</b-message>
       <div class="buttons is-centered">
         <router-link to="/">
-          <button class="button is-medium is-cjknormal">最初から遊ぶ</button>
+          <button class="button is-medium is-cjknormal">{{ $t('replay') }}</button>
         </router-link>
       </div>
       <b-modal :active.sync="isDrawModalActive" has-modal-card>
-        <CjkDrawModal v-bind:id="selectedId" v-bind:title="hand.indexOf(selectedId)+1 + '杯目のカレー'"/>
+        <CjkDrawModal v-bind:id="selectedId" v-bind:title="$t(hand.indexOf(selectedId)+1)"/>
       </b-modal>
     </section>
     <section class="section">
@@ -89,3 +89,28 @@ export default {
 <style scoped>
 @import url(https://use.fontawesome.com/releases/v5.2.0/css/all.css);
 </style>
+
+<i18n>
+{
+  "ja": {
+    "replay": "最初から遊ぶ",
+    "bustMessage": "アウトだとカレーの詳細は表示されないよ。",
+    "1": "1杯目",
+    "2": "2杯目",
+    "3": "3杯目",
+    "4": "4杯目",
+    "5": "5杯目",
+    "6": "6杯目"
+  },
+  "en": {
+    "replay": "Replay",
+    "bustMessage": "If you bust, the curry details will not be displayed.",
+    "1": "1st curry",
+    "2": "2nd curry",
+    "3": "3rd curry",
+    "4": "4th curry",
+    "5": "5th curry",
+    "6": "6th curry"
+  }
+}
+</i18n>

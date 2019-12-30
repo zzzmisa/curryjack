@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="is-size-5 cjkmsgshare">結果をシェアする</p>
+    <p class="is-size-5 cjkmsgshare">{{ $t('shareTheResult') }}</p>
     <div class="buttons is-centered">
       <a class="button is-cjktwitter" :href="twitter" title="Twitterでシェア" target="_blank">
         <span class="icon">
@@ -27,16 +27,6 @@
 <script>
 import config from '@/constants/config.js'
 
-function msg (total) {
-  if (total === config.cjscore) {
-    return 'パーフェクト！！'
-  } else if (total > config.cjscor) {
-    return 'アウト！！'
-  } else {
-    return 'あと少し！！'
-  }
-}
-
 export default {
   name: 'CjkResultShare',
   props: {
@@ -49,18 +39,29 @@ export default {
       url: config.url
     }
   },
+  methods: {
+    $_msg: function (total) {
+      if (total === config.cjscore) {
+        return this.$t('perfect')
+      } else if (total > config.cjscor) {
+        return this.$t('bust')
+      } else {
+        return this.$t('bitMore')
+      }
+    }
+  },
   computed: {
     twitter: function () {
       const url = encodeURIComponent(config.url + '/#' + this.$route.fullPath)
       const text = encodeURIComponent(
-        this.total.toLocaleString() + '円 ' + msg(this.total)
+        this.total.toLocaleString() + this.$t('yen') + '! ' + this.$_msg(this.total)
       )
-      const hashtags = encodeURIComponent('カレージャック')
+      const tag = encodeURIComponent(this.$t('tag'))
       const twurl =
         'https://twitter.com/intent/tweet?text=' +
         text +
         '&hashtags=' +
-        hashtags +
+        tag +
         '&url=' +
         url
       return twurl
@@ -71,18 +72,17 @@ export default {
         'https://www.facebook.com/sharer/sharer.php?u=' +
         url +
         '&t=' +
-        msg(this.total)
+        this.$_msg(this.total)
       return fburl
     },
     line: function () {
       const url = encodeURIComponent(config.url + '/#' + this.$route.fullPath)
       const text = encodeURIComponent(
         this.total.toLocaleString() +
-          '円 ' +
-          msg(this.total) +
-          ' カレージャック '
-      )
-      const lineurl = 'http://line.me/R/msg/text/?' + text + url
+          this.$t('yen') + '! ' +
+          this.$_msg(this.total))
+      const tag = encodeURIComponent('#' + this.$t('tag'))
+      const lineurl = 'http://line.me/R/msg/text/?' + text + ' ' + url + ' ' + tag
       return lineurl
     }
   }
@@ -94,3 +94,24 @@ export default {
   margin-bottom: 1.5rem;
 }
 </style>
+
+<i18n>
+{
+  "ja": {
+    "perfect": "パーフェクト！",
+    "bust": "アウト！",
+    "bitMore": "もう少し！",
+    "shareTheResult": "結果をシェアする",
+    "yen": "円",
+    "tag": "カレージャック"
+  },
+  "en": {
+    "perfect": "Perfect!",
+    "bust": "Bust!",
+    "bitMore": "Just a little bit more!",
+    "shareTheResult": "Share the result",
+    "yen": " yen",
+    "tag": "Curryjack"
+  }
+}
+</i18n>
