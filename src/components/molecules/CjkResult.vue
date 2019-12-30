@@ -70,12 +70,12 @@ export default {
     "perfect": "Perfect!!",
     "amazing": "Amazing!!",
     "bust": "Bust!!",
-    "bustMsg": "Your score is {over} yen over {cjscore} yen",
+    "bustMsg": "You exceeded {cjscore} yen by {over} yen.",
     "bitMore": "Just a little bit more!!",
-    "bitMoreMsg": "You need {left} yen more up to {cjscore} yen",
-    "notEvenClose": "Not even close!!",
-    "notEvenCloseMsg": "You need {left} yen more up to {cjscore} yen",
-    "totalMsg": "Total {total} yen"
+    "bitMoreMsg": "You need {left} yen more till you reach {cjscore} yen.",
+    "notEvenClose": "Still a long way off!!",
+    "notEvenCloseMsg": "You need {left} yen more till you reach {cjscore} yen.",
+    "totalMsg": "Now {total} yen in total."
   }
 }
 </i18n>

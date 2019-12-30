@@ -61,8 +61,8 @@ img {
     "curryjack": "カレージャック"
   },
   "en": {
-    "catchphrase": "Close to 2,100 yen! Don’t go over!",
-    "curryjack": "curryjack"
+    "catchphrase": "Get closer to 2,100 yen! Don't exceed it!",
+    "curryjack": "Curryjack"
   }
 }
 </i18n>

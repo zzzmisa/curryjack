@@ -79,8 +79,8 @@ export default {
     "langUrl": "https://curryjack.zzzmisa.com/",
     "footerLang": "日本語",
     "whatIsCurryjack": "What is Curryjack?",
-    "curryjackIs": "Curryjack is a game app using open data <a href='https://www.facebook.com/opendatacurry/' target='_blank'>#オープンデータカレー</a>.",
-    "pleaseShareAndStar": "Please Share and Star the following: "
+    "curryjackIs": "Curryjack is a game app using data of <a href='https://www.facebook.com/opendatacurry/' target='_blank'>#オープンデータカレー</a>.",
+    "pleaseShareAndStar": "Please share this app and click the Github Star below."
   }
 }
 </i18n>

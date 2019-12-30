@@ -100,12 +100,12 @@ export default {
     "showTheResult": "Show the result",
     "drawACard": "Draw a Card",
     "refillNotice": "You can't eat more than {maxHand} curries",
-    "1": "1st dish",
-    "2": "2nd dish",
-    "3": "3rd dish",
-    "4": "4th dish",
-    "5": "5th dish",
-    "6": "6th dish"
+    "1": "1st curry",
+    "2": "2nd curry",
+    "3": "3rd curry",
+    "4": "4th curry",
+    "5": "5th curry",
+    "6": "6th curry"
   }
 }
 </i18n>

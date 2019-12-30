@@ -104,13 +104,13 @@ export default {
   },
   "en": {
     "replay": "Replay",
-    "bustMessage": "If it's bust, the curry details will not be displayed.",
-    "1": "1st dish",
-    "2": "2nd dish",
-    "3": "3rd dish",
-    "4": "4th dish",
-    "5": "5th dish",
-    "6": "6th dish"
+    "bustMessage": "If you bust, the curry details will not be displayed.",
+    "1": "1st curry",
+    "2": "2nd curry",
+    "3": "3rd curry",
+    "4": "4th curry",
+    "5": "5th curry",
+    "6": "6th curry"
   }
 }
 </i18n>
