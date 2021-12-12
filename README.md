@@ -1,9 +1,10 @@
-# カレージャック
+# カレージャック Curryjack
 
-[#オープンデータカレー](https://www.facebook.com/opendatacurry/) のオープンデータを使ったゲームアプリです。  
-Vue CLI 3を使って作りました。
+カレージャックは、[#オープンデータカレー](https://www.facebook.com/opendatacurry/) を使ったゲームアプリです。  
+Curryjack is a game app using Open Data Curry.
 
- [デモはこちら🍛](https://curryjack.zzzmisa.com)
+🍛 [日本語で遊んでみる](https://curryjack.zzzmisa.com)   
+🍛 [Play in English](https://curryjack.zzzmisa.com/en/#/)
 
 ![screenshot](./public/screenshot.png)
 
