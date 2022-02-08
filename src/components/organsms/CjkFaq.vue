@@ -4,7 +4,7 @@
       <dl>
         <dt>このサービスは？</dt>
         <dd>
-          <a href="https://www.facebook.com/opendatacurry/" target="_blank">#オープンデータカレー</a>のオープンデータを使ったゲームアプリです。
+          <a href="https://www.facebook.com/opendatacurry/" target="_blank">#オープンデータカレー</a>を使ったゲームアプリです。
           <br>個人が趣味の範囲で開発・運営しています。
           <br>カレージャックというタイトル、2,100円という目標金額は、トランプゲームのブラックジャックからです。
           <br>

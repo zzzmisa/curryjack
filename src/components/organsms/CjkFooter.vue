@@ -15,7 +15,7 @@
           <CjkShare/>
           <strong>
             Made by
-            <a href="https://blog.zzzmisa.com" target="_blank">zzzmisa</a>
+            <a href="https://zzzmisa.com" target="_blank">zzzmisa</a>
           </strong>
         </div>
         <div class="column">
@@ -69,8 +69,8 @@ export default {
     "langUrl": "https://curryjack.zzzmisa.com/en",
     "footerLang": "English",
     "whatIsCurryjack": "カレージャックとは",
-    "curryjackIs": "<a href='https://www.facebook.com/opendatacurry/' target='_blank'>#オープンデータカレー</a> のオープンデータを使ったゲームアプリです。",
-    "pleaseShareAndStar": "気に入ったらシェア・Githubのスターをお願いします😃"
+    "curryjackIs": "<a href='https://www.facebook.com/opendatacurry/' target='_blank'>#オープンデータカレー</a> を使ったゲームアプリです。",
+    "pleaseShareAndStar": "気に入ったらシェア・GitHubのスターをお願いします😺"
   },
   "en": {
     "notice": "Notice",
@@ -79,8 +79,8 @@ export default {
     "langUrl": "https://curryjack.zzzmisa.com/",
     "footerLang": "日本語",
     "whatIsCurryjack": "What is Curryjack?",
-    "curryjackIs": "Curryjack is a game app using data of <a href='https://www.facebook.com/opendatacurry/' target='_blank'>#オープンデータカレー</a>.",
-    "pleaseShareAndStar": "Please share this app and click the Github Star below."
+    "curryjackIs": "Curryjack is a game app using <a href='https://www.facebook.com/opendatacurry/' target='_blank'>Open Data Curry</a>.",
+    "pleaseShareAndStar": "Please share this app and click the GitHub Star below 😺"
   }
 }
 </i18n>
