@@ -24,6 +24,7 @@ npm run serve
 
 ```
 npm run build
+npm run build-en
 ```
 
 ### Lints 実行

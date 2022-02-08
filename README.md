@@ -1,12 +1,12 @@
 # Curryjack カレージャック
 
-Curryjack is a game app using [Open Data Curry](https://www.facebook.com/opendatacurry/).  
-カレージャックは、[#オープンデータカレー](https://www.facebook.com/opendatacurry/) を使ったゲームアプリです。
-
 🍛 [Play in English](https://curryjack.zzzmisa.com/en/#/)  
 🍛 [日本語で遊んでみる](https://curryjack.zzzmisa.com)
 
-![screenshot](./public/screenshot.png)
+![Curryjack](./public/ogimage_en.jpg)
+
+Curryjack is a game app using [Open Data Curry](https://www.facebook.com/opendatacurry/).  
+カレージャックは、[#オープンデータカレー](https://www.facebook.com/opendatacurry/) を使ったゲームアプリです。
 
 ## System requirements
 
@@ -18,4 +18,4 @@ It is checked to work on the following browser's latest versions.
 ## Licence
 
 - Source code: [MIT](https://github.com/zzzmisa/curryjack/blob/master/LICENSE)
-- Curry data: [CC0](https://www.facebook.com/opendatacurry/)
+- Curry data: See [Open Data Curry](https://www.facebook.com/opendatacurry/)
