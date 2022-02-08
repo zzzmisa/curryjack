@@ -1,48 +1,21 @@
-# カレージャック Curryjack
+# Curryjack カレージャック
 
-カレージャックは、[#オープンデータカレー](https://www.facebook.com/opendatacurry/) を使ったゲームアプリです。  
-Curryjack is a game app using Open Data Curry.
+Curryjack is a game app using [Open Data Curry](https://www.facebook.com/opendatacurry/).  
+カレージャックは、[#オープンデータカレー](https://www.facebook.com/opendatacurry/) を使ったゲームアプリです。
 
-🍛 [日本語で遊んでみる](https://curryjack.zzzmisa.com)   
-🍛 [Play in English](https://curryjack.zzzmisa.com/en/#/)
+🍛 [Play in English](https://curryjack.zzzmisa.com/en/#/)  
+🍛 [日本語で遊んでみる](https://curryjack.zzzmisa.com)
 
 ![screenshot](./public/screenshot.png)
 
-## 動作環境
-ツールはすべてブラウザ上で動きます。  
-以下のブラウザの最新バージョンで動作確認しています。
-- パソコン：Google Chrome、Safari（いずれもOSX環境にて確認）
-- スマートフォン：iOS Safari
+## System requirements
 
-## コマンド
-### セットアップ
-依存モジュールがインストールされます。
-```
-npm install
-```
+It is checked to work on the following browser's latest versions.
 
-### 開発サーバー起動
-ブラウザで`localhost:8080`にアクセスすると、アプリの画面が表示されます。
-```
-npm run serve
-```
+- PC: Google Chrome, Safari (Checked on Mac OS X)
+- Mobile: iOS Safari
 
-### ビルド
-ビルド結果はdistフォルダに格納されます。
-```
-npm run build
-```
+## Licence
 
-### Lints実行
-可能なものは自動で修正までしてくれます。
-```
-npm run lint
-```
-
-### 単体テスト実行
-```
-npm run test:unit
-```
-
-## ライセンス
-MIT
+- Source code: [MIT](https://github.com/zzzmisa/curryjack/blob/master/LICENSE)
+- Curry data: [CC0](https://www.facebook.com/opendatacurry/)
