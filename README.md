@@ -18,5 +18,4 @@ It is checked to work on the following browser's latest versions.
 ## Licence
 
 - Source code: [MIT](https://github.com/zzzmisa/curryjack/blob/master/LICENSE)
-- Curry data: [CC0](https://www.facebook.com/opendatacurry/)
--en
+- Curry data: See [Open Data Curry](https://www.facebook.com/opendatacurry/)
