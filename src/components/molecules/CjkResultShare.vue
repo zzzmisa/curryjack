@@ -2,19 +2,19 @@
   <div>
     <p class="is-size-5 cjkmsgshare">{{ $t('shareTheResult') }}</p>
     <div class="buttons is-centered">
-      <a class="button is-cjktwitter" :href="twitter" title="Twitterでシェア" target="_blank">
+      <a class="button is-cjktwitter" :href="twitter" :title="$t('shareWithTwitter')" target="_blank">
         <span class="icon">
           <i class="fab fa-twitter"></i>
         </span>
         <span>Twitter</span>
       </a>
-      <a class="button is-cjkfacebook" :href="facebook" title="Facebookでシェア" target="_blank">
+      <a class="button is-cjkfacebook" :href="facebook" :title="$t('shareWithFacebook')" target="_blank">
         <span class="icon">
           <i class="fab fa-facebook"></i>
         </span>
         <span>Facebook</span>
       </a>
-      <a class="button is-cjkline" :href="line" title="LINEでシェア" target="_blank">
+      <a class="button is-cjkline" :href="line" :title="$t('shareWithLine')" target="_blank">
         <span class="icon">
           <i class="fab fa-line"></i>
         </span>
@@ -34,11 +34,6 @@ export default {
       type: Number
     }
   },
-  data: function () {
-    return {
-      url: config.url
-    }
-  },
   methods: {
     $_msg: function (total) {
       if (total === config.cjscore) {
@@ -51,8 +46,12 @@ export default {
     }
   },
   computed: {
+    url: function () {
+      if (this.$i18n.locale === 'ja') return config.url
+      else return config.url + '/en'
+    },
     twitter: function () {
-      const url = encodeURIComponent(config.url + '/#' + this.$route.fullPath)
+      const url = encodeURIComponent(this.url + '/#' + this.$route.fullPath)
       const text = encodeURIComponent(
         this.total.toLocaleString() + this.$t('yen') + '! ' + this.$_msg(this.total)
       )
@@ -67,7 +66,7 @@ export default {
       return twurl
     },
     facebook: function () {
-      const url = encodeURIComponent(config.url + '/#' + this.$route.fullPath)
+      const url = encodeURIComponent(this.url + '/#' + this.$route.fullPath)
       const fburl =
         'https://www.facebook.com/sharer/sharer.php?u=' +
         url +
@@ -76,7 +75,7 @@ export default {
       return fburl
     },
     line: function () {
-      const url = encodeURIComponent(config.url + '/#' + this.$route.fullPath)
+      const url = encodeURIComponent(this.url + '/#' + this.$route.fullPath)
       const text = encodeURIComponent(
         this.total.toLocaleString() +
           this.$t('yen') + '! ' +
@@ -102,6 +101,9 @@ export default {
     "bust": "アウト！",
     "bitMore": "もう少し！",
     "shareTheResult": "結果をシェアする",
+    "shareWithTwitter": "Twitterでシェア",
+    "shareWithFacebook": "Facebookでシェア",
+    "shareWithLine": "Lineでシェア",
     "yen": "円",
     "tag": "カレージャック"
   },
@@ -110,6 +112,9 @@ export default {
     "bust": "Bust!",
     "bitMore": "Just a little bit more!",
     "shareTheResult": "Share the result",
+    "shareWithTwitter": "Share with Twitter",
+    "shareWithFacebook": "Share with Facebook",
+    "shareWithLine": "SHare with Line",
     "yen": " yen",
     "tag": "Curryjack"
   }

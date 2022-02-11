@@ -45,14 +45,13 @@ import config from '@/constants/config.js'
 
 export default {
   name: 'CjkShare',
-  data: function () {
-    return {
-      url: config.url
-    }
-  },
   computed: {
+    url: function () {
+      if (this.$i18n.locale === 'ja') return config.url
+      else return config.url + '/en'
+    },
     twitter: function () {
-      const url = encodeURIComponent(config.url)
+      const url = encodeURIComponent(this.url)
       const text = encodeURIComponent(this.$t('letsPlayCurryjack'))
       const tag = encodeURIComponent(this.$t('tag'))
       const twurl =
@@ -65,12 +64,12 @@ export default {
       return twurl
     },
     facebook: function () {
-      const url = encodeURIComponent(config.url)
+      const url = encodeURIComponent(this.url)
       const fburl = 'https://www.facebook.com/sharer/sharer.php?u=' + url
       return fburl
     },
     line: function () {
-      const url = encodeURIComponent(config.url)
+      const url = encodeURIComponent(this.url)
       const text = encodeURIComponent(this.$t('letsPlayCurryjack'))
       const tag = encodeURIComponent('#' + this.$t('tag'))
       const lineurl = 'http://line.me/R/msg/text/?' + text + ' ' + url + ' ' + tag
